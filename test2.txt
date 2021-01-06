@@ -1,0 +1,81 @@
+fly
+
+takeTheShot() begin
+camera_on()
+snap()
+camera_off()
+end
+/* To extend the battery life, turn off the camera after snap the shot */
+
+opX(x) begin
+a = x + 5
+return a
+end
+
+opY(y) begin
+a = y / 2 + y
+a = a % 15
+return a
+end
+
+opZ(z) begin
+a = z * 3 + 1
+a = a % 8
+return a
+end
+
+opXY(x, y) begin
+a = x + y
+return a
+end
+
+x = 0
+y = 4
+z = 4
+
+while(x == 1) begin
+x = 0
+y = 0
+z = 0
+temp
+end
+
+if ( x == 0 && y == 1 && z == 4) begin
+move()
+
+end
+
+while(connection()) begin
+move()
+output(acceleration())
+/*If the temperature and connection are good, take the photo*/
+if(temperature()) begin
+takeTheShot()
+output(altitude())
+output(time())
+end
+else begin
+x = opX(X)
+y = opY(y)
+z = opZ(z) + input()
+x = opXY(x, y)
+move() 
+end
+x = input()
+input(y)
+input(z)
+
+for ( i = 0; i < 5; i = i + 1) begin
+if(altitude() >= 10)begin
+takeTheShot()
+output(altitude())
+output(time())
+output("Locations:")
+output(x)
+output(y)
+output(z)
+end
+end
+end
+
+land

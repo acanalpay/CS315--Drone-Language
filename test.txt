@@ -1,0 +1,84 @@
+fly
+xCoor = 0
+yCoor = 1
+zCoor = 4
+/* these are the move coordinats*/
+while(xCoor == 1)
+begin
+x = x + 5
+y = y * 2
+
+mod = z%5
+z = z + mod
+end
+
+if( y >= 25 && mod == 0) 
+begin
+y = 3
+end
+
+if( y >= 100) 
+begin
+for( i = 0; i < 20; i = i + 1) 
+begin
+y = y - 2
+if(y % 5 == 1 || y % 5 == 2 || y % 5 == 3) 
+begin
+emre = 10
+end
+end
+end
+
+if( x >= 50) 
+begin
+x = 20
+end
+
+if(z >= 60 || z <= -60) 
+begin
+z = z % 10
+if(z == 5) 
+begin
+z = 4
+end
+else 
+begin
+z = z
+end
+
+end
+
+
+
+
+newAltitude = 100
+
+x = 10
+
+/* Function decleration */
+
+risingmeter(x)
+begin
+while (x < newAltitude)
+begin
+x = x + 1
+
+end
+
+return x
+
+end
+
+/* bad connection = 0, perfect connection = 10*/
+
+if(x < 100 && y > 5 && z< 3 || t> 10)
+begin
+emre = 11
+end
+
+else
+begin
+risingmeter(10)
+end
+
+land
